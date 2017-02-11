@@ -1,11 +1,12 @@
 Scanner sc = new Scanner(System.in)
-def (n, k, q) = sc.nextLine().tokenize(" ")*.toInteger()
-int[] array = sc.nextLine().tokenize(" ")*.toInteger()
+def readIntArray = { sc.nextLine().tokenize(" ").collect { it as int } }
+def (n, k, q) = readIntArray()
+int[] array = readIntArray()
 def queries = []
 for (int i in 0..q - 1) {
     queries << sc.nextInt()
 }
-for (int i in 0..q - 1) {
-    int index = (queries[i] - k) % n        // Works for negative index because a[-1] == last element of the array
+queries.each {
+    int index = (it - k) % n        // Works for negative index because a[-1] == last element of the array
     println array[index]
 }
