@@ -1,3 +1,5 @@
+package algorithms.implementations
+
 Scanner sc = new Scanner(System.in)
 def letterWidth = 1
 List<Integer> letterHeights = sc.nextLine().tokenize(" ").collect { it as int }

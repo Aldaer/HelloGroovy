@@ -1,3 +1,5 @@
+package algorithms.implementations
+
 Scanner sc = new Scanner(System.in)
 def (s, t, a, b, m, n) = (0..5).collect({ sc.nextInt() })
 def apples = (1..m).collect({ sc.nextInt() + a })

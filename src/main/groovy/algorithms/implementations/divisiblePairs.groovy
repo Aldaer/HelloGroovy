@@ -1,3 +1,5 @@
+package algorithms.implementations
+
 Scanner sc = new Scanner(System.in)
 Scanner.metaClass.readInts = { int i -> (1..i).collect({ nextInt() }) }
 def (n, k) = sc.readInts(2)

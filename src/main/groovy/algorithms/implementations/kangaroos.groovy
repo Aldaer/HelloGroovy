@@ -1,3 +1,5 @@
+package algorithms.implementations
+
 Scanner sc = new Scanner(System.in)
 def (x1, v1, x2, v2) = (0..3).collect({ sc.nextInt() })
 boolean canDo

@@ -1,3 +1,5 @@
+package algorithms.warmup
+
 Scanner sc = new Scanner(System.in)
 def readIntArray = { sc.nextLine().tokenize(" ").collect { it as int } }
 def (n, k, q) = readIntArray()

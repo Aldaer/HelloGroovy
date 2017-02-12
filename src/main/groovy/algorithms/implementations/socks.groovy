@@ -1,3 +1,5 @@
+package algorithms.implementations
+
 Scanner sc = new Scanner(System.in)
 def n = sc.nextInt()
 int[] c = new int[101]

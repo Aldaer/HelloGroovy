@@ -1,3 +1,5 @@
+package algorithms.implementations
+
 Scanner sc = new Scanner(System.in)
 def t = sc.nextInt()
 def queries = (1..t).collect { sc.nextInt() }
