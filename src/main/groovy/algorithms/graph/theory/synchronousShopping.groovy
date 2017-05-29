@@ -87,8 +87,8 @@ def shoppingCenters = (1..N).collect {
 
 (1..M).each {
     def (int x, int y, int t) = scnr.nextLine().tokenize(' ').collect { it as int }
-    shoppingCenters[x - 1].roads << new Road<>(dest: shoppingCenters[y - 1], time: t)
-    shoppingCenters[y - 1].roads << new Road<>(dest: shoppingCenters[x - 1], time: t)
+    shoppingCenters[x - 1].roads << new Road(dest: shoppingCenters[y - 1], time: t)
+    shoppingCenters[y - 1].roads << new Road(dest: shoppingCenters[x - 1], time: t)
 }
 
 def solver = new Solver(centers: shoppingCenters, ALL_FISH: (1 << K) - 1)
