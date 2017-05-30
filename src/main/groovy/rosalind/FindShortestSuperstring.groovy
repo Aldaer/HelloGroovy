@@ -1,6 +1,8 @@
 package rosalind
 
-substrings = [] as List<String>
+import groovy.transform.Field
+
+@Field List<String> substrings = []
 
 static <T> List<T> forEachSetBit(long x, Closure<T> action) {
     long dx = x
@@ -36,13 +38,12 @@ superstring = { long multiIndex ->
 }.memoize()
 
 
-println "Input: number of strings, then one string per line\nExample:\n2\naabc\nbcaa"
-Scanner sc = new Scanner(System.in)
-int N = sc.nextLine() as int
+def sequences = FASTA.readFromConsole()
+def N = sequences.size()
 assert N < 63
-for (i in 1..N) substrings << sc.nextLine()
 
 int allStrings = (1 << N) - 1
+substrings = sequences.collect { it.seq }
 
 def time = System.currentTimeMillis()
 println superstring.call(allStrings).sort { s1, s2 -> s1.length() - s2.length() }.get(0)

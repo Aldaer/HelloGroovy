@@ -3,13 +3,10 @@ package rosalind
 Scanner sc = new Scanner(System.in)
 (n, m) = sc.nextLine().tokenize(' ').collect { it as int }
 
-newborns = null
-adults = { t ->
-    (1..m - 1).collect { j -> newborns(t - j) }.inject(0L, { x, a -> x + a })
-}.memoize()
-
 newborns = { t ->
-    t < 1 ? 0 : t == 1 ? 1L : adults(t - 1)
+    t < 1 ? 0L : t == 1 ? 1L :
+            (2..m).collect { j -> newborns(t - j) }.sum()
 }.memoize()
 
-(1..n).each { println adults(it) + newborns(it) }
+//adults(t)=newborns(t+1)
+(1..n).each { println newborns(it + 1) + newborns(it) }
