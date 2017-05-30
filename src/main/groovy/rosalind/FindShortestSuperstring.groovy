@@ -1,3 +1,5 @@
+package rosalind
+
 substrings = [] as List<String>
 
 static <T> List<T> forEachSetBit(long x, Closure<T> action) {
