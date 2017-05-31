@@ -28,4 +28,13 @@ class FASTA {
         }
         result
     }
+
+    static List<FASTA> getFromURL(URL url) {
+        def download = url.getText().split('>').findAll { it }
+        download.collect { part ->
+            def lines = part.split('\n', 2)
+            def seq = lines[1].replaceAll('\n', '')
+            new FASTA(name: lines[0], seq: seq)
+        }
+    }
 }
