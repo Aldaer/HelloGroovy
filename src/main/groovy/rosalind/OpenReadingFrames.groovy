@@ -2,8 +2,8 @@ package rosalind
 
 import groovy.transform.Field
 
-import static rosalind.CodonTable.reverseComplement
-import static rosalind.CodonTable.transcribe
+import static GeneticData.reverseComplement
+import static GeneticData.transcribe
 
 @Field List<String> STOP_CODONS = ['UAA', 'UAG', 'UGA']
 
@@ -23,7 +23,7 @@ List<String> orfCodons(String mRna, int startCodonPosition) {
 
 List<String> generateProteins(String mRna) {
     startCodonPositions(mRna).collect { pos ->
-        orfCodons(mRna, pos).collect { CodonTable.TABLE[it] }.join('')
+        orfCodons(mRna, pos).collect { GeneticData.CODONS[it] }.join('')
     }.findAll()
 }
 
