@@ -1,6 +1,7 @@
 package rosalind
 
-// TODO: rewrite in a safe way, mod 1_000_000
+// 2^n mod 1_000_000
 int n = new Scanner(System.in).nextInt()
-def all = (1..n-1).collect {CommonMath.combinations(n, it)}.sum() + 2
-println all
+int subsets = 1
+for (int i in 1..n) subsets = subsets*2 % 1_000_000
+println subsets
