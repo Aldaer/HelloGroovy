@@ -7,6 +7,13 @@ class DynamicMethodCallTarget {
     }
     void two(String param) {
         println "2-$param-2"
+        def d = callClosure {println "CALLED"}
+    }
+
+
+
+    static <T> T callClosure(Closure<T> t) {
+        t()
     }
 }
 
