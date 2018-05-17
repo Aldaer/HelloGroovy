@@ -22,3 +22,4 @@ def methodName = 'one'
 dmc."$methodName"("uno")
 methodName = 'two'
 dmc."$methodName"("duo")
+
