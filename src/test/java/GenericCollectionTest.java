@@ -5,11 +5,11 @@ import java.util.List;
 
 public class GenericCollectionTest {
 
-    private void removeZombies(List<Person> roster) {
+    private void removeZombies(List<? extends Person> roster) {
         roster.removeIf(Person::isDead);
     }
 
-    private void addAZombie(List<Person> roster) {
+    private void addAZombie(List<? super Person> roster) {
         roster.add(new Person("Shawn", true));
     }
 
