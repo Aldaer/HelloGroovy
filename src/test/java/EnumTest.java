@@ -1,5 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class EnumTest {
     static final Map<Integer, MyEnum> ENUM_MAP = new HashMap<>();
